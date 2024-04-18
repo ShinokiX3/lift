@@ -1,0 +1,69 @@
+.input {
+	clip: rect(0 0 0 0);
+	clip-path: inset(100%);
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+}
+
+.tile {
+	cursor: pointer;
+	display: block;
+	position: relative;
+	width: 100%;
+	padding: 14px 20px;
+}
+
+.default { 
+	.input {
+		&:checked + .tile {
+			color: $primary-color;
+			border-color: $primary-color;
+			box-shadow: $default-shadow;
+
+			&::after {
+				@include background-image-cover($checked-checkbox-icon-url);
+			}
+			
+			.label {
+				color: #707070;
+			}
+		}
+
+		&:focus + .tile {
+			border-color: $primary-color;
+			box-shadow: $focus-shadow;
+		}
+	}
+
+	.tile {
+		border: 2px solid $secondary-color;
+		border-radius: $default-border-r;
+		background-color: #fff;
+		
+		transition: 0.15s ease;
+	
+		&::after {
+			content: '';
+			position: absolute;
+			right: 20px;
+
+			width: $l-icon-w;
+			height: $l-icon-h;
+		
+			@include background-image-cover($default-checkbox-icon-url);
+		}
+	
+		&:hover {
+			border-color: $primary-color;
+		}
+	}
+
+	.label {
+		color: $primary-color;
+		transition: .375s ease;
+		text-align: center;
+	}
+}

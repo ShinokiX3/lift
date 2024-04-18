@@ -1,0 +1,63 @@
+.button {
+	cursor: pointer;
+	border-radius: $default-border-r;
+	color: $primary-color;
+	padding: $bttn-default-p-h $bttn-default-p-w;
+	transition: background-color 0.2s ease;
+}
+
+.clear {
+	padding: 0;
+	border: none;
+	background: none;
+	
+	&:hover {
+		background-color: transparent;
+	}
+
+	svg {
+		stroke: $default-controls-color;
+	}
+}
+
+.clear.disabled {
+	color: $secondary-color;
+	
+	svg {
+		stroke: $secondary-color
+	}
+}
+
+.default {
+    font-size: 14px;
+    font-weight: 550;
+    color: white;
+	border: none;
+
+    background-color: $primary-color;
+	box-shadow: $default-shadow;
+
+	&:focus {
+		outline-color: $primary-color;
+	}
+
+	&:hover {
+		background-color: rgba($color: black, $alpha: 0.5);
+	}
+}
+
+.default.disabled {
+	background-color: $secondary-color;
+	
+	&:hover {
+		background-color: $secondary-color;
+	}
+}
+
+.square {
+	border-radius: $square-border-r;
+}
+
+.disabled {
+	cursor: initial;
+}

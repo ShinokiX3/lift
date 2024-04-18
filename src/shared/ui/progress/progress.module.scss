@@ -1,0 +1,21 @@
+.progress {
+    display: block;
+    position: relative;
+    
+    height: 5px;
+    width: 100%;
+    
+    border-radius: $small-border-r;
+    background-color: white;
+}
+
+.filled {
+    position: absolute;
+    
+    width: 20%;
+    height: inherit;
+
+    border-radius: inherit;
+    background-color: $primary-color;
+    transition: width 0.5s ease-in-out;
+}

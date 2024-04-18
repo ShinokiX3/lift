@@ -1,0 +1,11 @@
+.wrapper {
+    @include flex-column-center(true, false);
+    flex-grow: 1;
+    gap: 20px;
+
+    overflow-y: auto;
+}
+
+.center {
+    @include flex-column-center(true, true);
+}

@@ -46,7 +46,7 @@ export const quizSlice = createSlice({
 		completeQuiz: (state) => {
 			state.answers = [];
 			state.currentQuestion = 0;
-			state.percentage = 10;
+			state.percentage = 0;
 		}
 	},
 });

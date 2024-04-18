@@ -1,0 +1,22 @@
+.wrapper {
+    @include flex-column-center(true, false);
+    gap: 10px;
+    border-radius: $default-border-r;
+    text-align: center;
+
+    img {
+        width: $card-image-w;
+        box-shadow: $default-shadow;
+        border-radius: $default-border-r;
+    }
+
+    @media (max-width: 380px), (max-height: 450px) {
+        h2 {
+            font-size: $font-size-l;
+        }
+
+        p {
+            font-size: $font-size-sm;
+        }
+    }
+}

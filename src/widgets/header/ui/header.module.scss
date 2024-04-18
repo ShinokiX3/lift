@@ -37,6 +37,13 @@
     justify-self: end;
 }
 
+.back, .menu {
+    svg {
+        width: $l-icon-w-l;
+        height: $l-icon-h-l;
+    }
+}
+
 .progress { 
     grid-area: 2 / 1 / 2 / 4;
 }

@@ -3,7 +3,8 @@ $secondary-color: #D7DCDF;
 $accent-color: red;
 
 $default-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-$focus-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #D7DCDF;
+$shadow-size: 3px;
+$focus-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 $shadow-size $secondary-color;
 $default-controls-color: #212121;
 
 $default-border-r: 0.5rem;
@@ -12,6 +13,9 @@ $square-border-r: 0;
 
 $l-icon-w: 25px;
 $l-icon-h: 25px;
+
+$l-icon-w-l: 20px;
+$l-icon-h-l: 20px;
 
 $font-size-l: 16px;
 $font-size-sm: 13px;

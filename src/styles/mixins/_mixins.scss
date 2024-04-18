@@ -1,0 +1,18 @@
+@mixin flex-column-center($align: false, $justify: false) {
+    display: flex;
+    flex-direction: column;
+
+    @if $align {
+        align-items: center;
+    }
+
+    @if $justify {
+        justify-content: center;
+    }
+}
+
+@mixin background-image-cover($url) {
+    background-image: url($url);
+    object-fit: cover;
+    background-repeat: no-repeat;
+}

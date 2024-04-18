@@ -9,6 +9,12 @@ ol[class] {
   padding: 0;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 body,
 h1,
 h2,
@@ -26,11 +32,19 @@ dd {
   margin: 0;
 }
 
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('../shared/assets/fonts/Noto Sans/NotoSans-VariableFont_wdth,wght.ttf') format('truetype');
+  font-style: normal;
+}
+
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+
+  font-family: 'Noto Sans', sans-serif;
 }
 
 ul[class],

@@ -1,0 +1,33 @@
+$primary-color: #40BCA3;
+$secondary-color: #D7DCDF;
+$accent-color: red;
+
+$default-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+$focus-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #D7DCDF;
+$default-controls-color: #212121;
+
+$default-border-r: 0.5rem;
+$small-border-r: 0.2rem;
+$square-border-r: 0;
+
+$l-icon-w: 25px;
+$l-icon-h: 25px;
+
+$font-size-l: 16px;
+$font-size-sm: 13px;
+
+$header-min-h: 85px;
+$content-w: 535px;
+
+$margin-h: 25px;
+
+$default-checkbox-icon-url: '../../assets/svg/icons/default_checkbox.svg';
+$checked-checkbox-icon-url: '../../assets/svg/icons/checked_checkbox.svg';
+
+$bttn-default-p-h: 13px; 
+$bttn-default-p-w: 20px;
+
+$quiz-content-max-h: calc(100dvh - $header-min-h * 2);
+$quiz-content-max-h-mobile: calc(100dvh - $header-min-h * 3.5);
+
+$card-image-w: 200px;

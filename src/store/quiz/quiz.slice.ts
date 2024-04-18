@@ -2,9 +2,11 @@ import { QuizAnswer } from 'features/quiz/types/quiz.type';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { QuizInitialState, SetupPayload } from './quiz.type';
 
+const answers = localStorage.getItem('answers');
+
 const initialState: QuizInitialState = {
 	currentQuestion: Number(new URLSearchParams(window.location.search).get('qid')) ?? 0,
-	answers: JSON.parse(localStorage.getItem('answers') ?? '') ?? [],
+	answers: answers ? JSON.parse(answers) : [],
 	percentage: 0,
 	questions: [],
 	total: 1,

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import cls from './quiz.module.scss';
 import { useActions } from 'hooks/useActions';
 import { useTypedSelector } from 'hooks/useTypedSelector';
-import { useLocalStorage, useHistoryState } from 'hooks';
+import { useLocalStorage, useHistoryState } from 'hooks/index';
 import { QuizAnswer, QuizQuestions } from '../../types/quiz.type';
 import QuizView from '../view/quizView';
 import { Button, ThemeButton } from 'shared/ui/button/button';

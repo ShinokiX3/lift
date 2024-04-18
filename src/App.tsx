@@ -1,13 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useActions } from 'hooks/useActions';
+import { useEffect } from 'react';
+import cls from './app.module.scss';
+import Header from 'widgets/header/ui/header';
+import Movies from 'screen/movies/ui/movies';
+import { QUIZ } from 'features/quiz/const/quiz.const';
+import Quiz from 'features/quiz/ui/main/quiz';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+	const { setupQuiz } = useActions();
 
-  return (
-    <>hello</>
-  )
+	useEffect(() => {
+		setupQuiz({ questions: QUIZ.questions, total: QUIZ.total });
+	}, []);
+
+	return (
+		<main className={cls.app}>
+			<div className={cls.container}>
+				<Header />
+				<Quiz Render={Movies}/>
+			</div>
+		</main>
+	)
 }
 
 export default App

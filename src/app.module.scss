@@ -1,0 +1,15 @@
+.app {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    height: 100dvh;
+    overflow-x: hidden;
+}
+
+.container {
+    @include flex-column-center(true, false);
+
+    height: 100%;
+    width: $content-w;
+    padding: 0px 25px;
+}

@@ -1,0 +1,11 @@
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: $quiz-content-max-h;
+    overflow-y: auto;
+
+    @media (max-width: 370px) {
+        max-height: $quiz-content-max-h-mobile;
+    }
+}

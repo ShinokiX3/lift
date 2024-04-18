@@ -1,0 +1,32 @@
+.wrapper {
+    @include flex-column-center(false, true);
+    
+    width: 100%;
+    flex-grow: 1;
+    margin: 10px 0px;
+}
+
+.questions {
+    @include flex-column-center(false, true);
+
+    position: relative;
+    flex-grow: 1;
+    gap: 20px;
+    width: 100%;
+}
+
+.controls {
+    margin: 25px 0px;
+
+    &, & button {
+        width: 100%;
+    }
+
+    @media (max-width: 380px), (max-height: 450px) {
+        margin: 15px 0px;
+    }
+}
+
+.render {
+    overflow-y: auto;
+}

@@ -6,10 +6,10 @@ import { useActions } from 'hooks/useActions';
 import { useTypedSelector } from 'hooks/useTypedSelector';
 import { useLocalStorage, useHistoryState } from 'hooks/index';
 import { QuizAnswer, QuizQuestions } from '../../types/quiz.type';
+import QuizView from '../view/view';
+import { Button } from 'shared/ui/button/button';
 import { Loader } from 'shared/ui/loader/loader';
 import { ThemeButton } from 'shared/ui/button/button.types';
-import { Form } from 'shared/ui/form';
-import View from '../view/view';
 
 interface QuizParams {
     quiz?: QuizQuestions;
@@ -63,7 +63,9 @@ const Quiz: React.FC<QuizParams> = ({ Render }) => {
         }
     }
 
-    const nextHandler = () => {
+    const nextHandler = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        
         const answer = {
             id: questions[current].id,
             answers: values[type],
@@ -81,27 +83,27 @@ const Quiz: React.FC<QuizParams> = ({ Render }) => {
     }
 
     if (current + 1 > total) return (
-        <Form className={`${cls.wrapper} ${cls.render}`}>
+        <div className={`${cls.wrapper} ${cls.render}`}>
             { Render ?
                 <Render />
                 : <p>You have completed the quiz!</p> 
             }
 
-            <Form.Submit 
+            <Button 
                 className={cls.controls}
                 onClick={completeHandler} 
                 theme={ThemeButton.DEFAULT}
             >
                 Complete
-            </Form.Submit>
-        </Form>
+            </Button>
+        </div>
     )
 
     return (
-        <Form className={cls.wrapper}> 
+        <form onSubmit={nextHandler} className={cls.wrapper}>
             <div className={cls.questions}>
                 { questions[current] ? 
-                    <View 
+                    <QuizView 
                         question={questions[current]}
                         value={values[type]}
                         handler={valuesHandler}
@@ -112,14 +114,17 @@ const Quiz: React.FC<QuizParams> = ({ Render }) => {
                     </div>
                 }
             </div>
-            
+
             <div className={cls.controls}>
-                <Form.Submit 
-                    message='Submit' 
-                    onClick={nextHandler} 
-                />
+                <Button 
+                    type='submit' 
+                    theme={ThemeButton.DEFAULT}
+                    disabled={!values[type]?.length}
+                >
+                    Continue
+                </Button>
             </div>
-        </Form>
+        </form>
     );
 };
 

@@ -1,10 +1,11 @@
 import cls from './header.module.scss';
 import { useTypedSelector } from 'hooks/useTypedSelector';
 import { useActions } from 'hooks/useActions';
-import { Button, ThemeButton } from 'shared/ui/button/button';
+import { Button } from 'shared/ui/button/button';
 import { Progress } from 'shared/ui/progress/progress';
 import { Clouds } from 'shared/assets/svg/header';
 import { BackIcon, MenuIcon } from 'shared/assets/svg/icons';
+import { ThemeButton } from 'shared/ui/button/button.types';
 
 const Nav = () => {
     const { percentage, currentQuestion: current } = useTypedSelector(state => state.quiz);

@@ -1,19 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './button.module.scss';
-
-export enum ThemeButton {
-	CLEAR = 'clear',
-	DEFAULT = 'default',
-}
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-	className?: string;
-	type?: "button" | "submit" | "reset" | undefined;
-	theme?: ThemeButton;
-	square?: boolean;
-	disabled?: boolean;
-}
+import { ButtonProps, ThemeButton } from './button.types';
 
 export const Button: React.FC<ButtonProps> = (props) => {
 	const {

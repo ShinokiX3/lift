@@ -2,18 +2,7 @@
 import { memo, useEffect, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './input.module.scss';
-
-type HTMLInputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
-
-interface InputProps extends HTMLInputProps {
-    className?: string;
-    type?: string;
-    value?: string;
-    onChange?: (value: string) => void;
-    validate?: (value: string) => boolean;
-    placeholder?: string;
-	autofocus?: boolean;
-}
+import { InputProps } from './input.types';
 
 export const Input = memo((props: InputProps) => {
 	const {

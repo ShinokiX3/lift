@@ -1,18 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './checkbox.module.scss';
-
-export enum ThemeCheckbox {
-	CLEAR = 'clear',
-	DEFAULT = 'default',
-}
-
-interface CheckboxProps extends React.ButtonHTMLAttributes<HTMLInputElement>  {
-    className?: string;
-    theme?: ThemeCheckbox;
-    children?: React.ReactNode;
-    checked?: boolean | undefined;
-}
+import { CheckboxProps, ThemeCheckbox } from './checkbox.types';
 
 export const Checkbox: React.FC<CheckboxProps> = (props) => {
     const {
